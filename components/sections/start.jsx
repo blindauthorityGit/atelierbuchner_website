@@ -101,7 +101,13 @@ const Start = (props) => {
         <div ref={containerRef} className="col-span-12 snapCont relative overlay-y-auto ">
             {data.map((e, i) => {
                 return (
-                    <Container ref={(ref) => (myRefs.current[i] = ref)} myRef={myRefs} id={i} image={e.image}>
+                    <Container
+                        key={`cont${i}`}
+                        ref={(ref) => (myRefs.current[i] = ref)}
+                        myRef={myRefs}
+                        id={i}
+                        image={e.image}
+                    >
                         <div className="absolute top-64 left-64 text-white text-5xl z-50">
                             {scrolling ? "SCROOLING" : "STOIPING"}
                         </div>
